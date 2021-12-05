@@ -27,12 +27,6 @@ public class Day4Part2 {
 			boardsThatDidNotWinYet = checkFirstComletedRows(boardsThatDidNotWinYet,drawnNumber);
 			if (!boardsThatDidNotWinYet.isEmpty()) {
 				boardsThatDidNotWinYet = checkFirstVerticalComletedLines(boardsThatDidNotWinYet,drawnNumber);
-				//if (wonBoard != null) {
-					//System.out.println("A Board has WON!! **** Number Drawn ** " + drawnNumber);
-					//System.out.println(Arrays.deepToString(wonBoard));
-					//calculateFinalAnswer(wonBoard, drawnNumber);
-					//break;
-				//}
 			} 
 			System.out.println("boardsThatDidNotWinYet "+ boardsThatDidNotWinYet.size());
 			if(boardsThatDidNotWinYet.size() == 1) {
@@ -128,8 +122,6 @@ public class Day4Part2 {
 				Integer[] column = getColumn(board, i);
 				matchedColumnFound = Arrays.asList(column).stream().allMatch(j -> j == -1);
 				if (matchedColumnFound) {
-					//System.out.println("A Board has WON!! **** Number Drawn ** " + drawnNumber);
-					//System.out.println(Arrays.deepToString(board));
 					wonBoards.add(board);
 					calculateFinalAnswer(board, drawnNumber);
 					break;
